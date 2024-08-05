@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wedding Invitation</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="./styles/styles.css"> <!-- Link ke file CSS -->
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar" id="navbar">
+    <a href="javascript:void(0);" class="icon" onclick="toggleNavbar() "style="float: left;"    >
+        <i class="fa fa-bars"></i>
+    </a>
+    <div class="navbar-links" id="navbarLinks">
+        <a href="#home">Home</a>
+        <a href="#us">About Us</a>
+        <a href="#wedding">Wedding Details</a>
+        <a href="#rsvp">RSVP</a>
+    </div>
+</div>  
+
+<!-- Bagian Teratas Halaman -->
+<div class="bgimg content" id="home">
+    <div class="bgimg-overlay w3-container">
+        <div>
+            <h1>Welcome to John & Jane's Wedding</h1>
+            <p>Join us in celebrating our love</p>
+            <button class="w3-button w3-white w3-large w3-round" onclick="openDetailsModal()">View Details</button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal untuk View Details -->
+<div id="detailsModal" class="w3-modal">
+    <div class="w3-modal-content w3-card-4 w3-animate-top" style="padding:32px;max-width:600px">
+        <header class="w3-container w3-teal">
+            <span onclick="document.getElementById('detailsModal').style.display='none'" 
+            class="w3-button w3-teal w3-display-topright">&times;</span>
+            <h2>Wedding Details</h2>
+        </header>
+        <div class="w3-container">
+            <p>We are thrilled to invite you to our special day! Here are the details:</p>
+            <ul class="w3-ul w3-border">
+                <li><strong>Date:</strong> January 20, 2024</li>
+                <li><strong>Time:</strong> 2:00 PM - Ceremony, 5:00 PM - Reception</li>
+                <li><strong>Location:</strong> Beautiful Venue, City Name, Country</li>
+                <li><strong>Dress Code:</strong> Formal Attire</li>
+                <li><strong>RSVP:</strong> Please respond by January 1, 2024</li>
+            </ul>
+        </div>
+        <footer class="w3-container w3-teal">
+            <p>Looking forward to celebrating with you!</p>
+        </footer>
+    </div>
+</div>
+
+<!-- Musik Latar -->
+<audio id="backgroundMusic" loop>
+    <source src="./audio/Bali World Music, Gus Teja, Hero.mp4" type="audio/mp4">
+    Your browser does not support the audio element.
+</audio>
+
+<!-- Kontrol Musik -->
+<button id="soundButton" onclick="toggleMusic()">
+    <i id="soundIcon" class="fa fa-volume-up"></i>
+</button>
+
+<!-- Konten Halaman -->
+<div class="w3-container w3-padding-64 w3-pale-red w3-grayscale-min" id="us">
+    <div class="w3-content">
+        <h1 class="w3-center w3-text-grey"><b>Jane & John</b></h1>
+        <img class="w3-round w3-grayscale-min" src="./images/wedding_couple2.jpg" style="width:100%;margin:32px 0">
+        <p><i>You all know us. And we all know you...</i></p><br>
+        <p class="w3-center"><a href="#wedding" class="w3-button w3-black w3-round w3-padding-large w3-large">Wedding Details</a></p>
+    </div>
+</div>
+
+<!-- Background photo -->
+<div class="w3-display-container bgimg2">
+    <div class="w3-display-middle w3-text-white w3-center">
+        <h1 class="w3-jumbo">You Are Invited</h1><br>
+        <h2>Of course..</h2>
+    </div>
+</div>
+
+<!-- Wedding information -->
+<div class="w3-container w3-padding-64 w3-pale-red w3-grayscale-min w3-center" id="wedding">
+    <div class="w3-content">
+        <h1 class="w3-text-grey"><b>THE WEDDING</b></h1>
+        <img class="w3-round-large w3-grayscale-min" src="./images/wedding_location.jpg" style="width:100%;margin:64px 0">
+        <div class="w3-row">
+            <div class="w3-half">
+                <h2>When</h2>
+                <p>Wedding Ceremony - 2:00pm</p>
+                <p>Reception & Dinner - 5:00pm</p>
+            </div>
+            <div class="w3-half">
+                <h2>Where</h2>
+                <p>Some place, an address</p>
+                <p>Some where, some address</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- RSVP section -->
+<div class="w3-container w3-padding-64 w3-pale-red w3-center w3-wide" id="rsvp">
+    <h1>HOPE YOU CAN MAKE IT!</h1>
+    <p class="w3-large">Kindly Respond By January, 2017</p>
+    <p class="w3-xlarge">
+        <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-round w3-red w3-opacity w3-hover-opacity-off" style="padding:8px 60px">RSVP</button>
+    </p>
+</div>
+
+<!-- RSVP modal -->
+<div id="id01" class="w3-modal">
+    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="padding:32px;max-width:600px">
+        <div class="w3-container w3-white w3-center">
+            <h1 class="w3-wide">CAN YOU COME?</h1>
+            <p>We really hope you can make it.</p>
+            <form>
+                <input class="w3-input w3-border" type="text" placeholder="Name(s)" name="name">
+            </form>
+            <p><i>Sincerely, John & Jane</i></p>
+            <div class="w3-row">
+                <div class="w3-half">
+                    <button onclick="document.getElementById('id01').style.display='none'" type="button" class="w3-button w3-block w3-green">Going</button>
+                </div>
+                <div class="w3-half">
+                    <button onclick="document.getElementById('id01').style.display='none'" type="button" class="w3-button w3-block w3-red">Can't come</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-16">
+    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+<div class="w3-hide-small" style="margin-bottom:32px"> </div>
+
+<script>
+function toggleMusic() {
+    var audio = document.getElementById("backgroundMusic");
+    var soundIcon = document.getElementById("soundIcon");
+    
+    if (audio.paused) {
+        audio.play();
+        soundIcon.classList.remove("fa-volume-mute");
+        soundIcon.classList.add("fa-volume-up");
+    } else {
+        audio.pause();
+        soundIcon.classList.remove("fa-volume-up");
+        soundIcon.classList.add("fa-volume-mute");
+    }
+}
+
+function openDetailsModal() {
+    document.getElementById('detailsModal').style.display = 'block';
+}
+
+function toggleNavbar() {
+    var navbarLinks = document.getElementById("navbarLinks");
+    if (navbarLinks.style.display === "block") {
+        navbarLinks.style.display = "none";
+    } else {
+        navbarLinks.style.display = "block";
+    }
+}
+
+// Add media query to handle responsive behavior
+window.addEventListener('resize', function() {
+  // Get the width of the viewport
+  var viewportWidth = window.innerWidth;
+  
+  if (viewportWidth <= 768) {
+    // Hide navbar links by default on smaller screens
+    document.getElementById("navbarLinks").style.display = "none";
+    // Show the menu icon
+    document.querySelector(".navbar .icon").style.display = "block";
+  } else {
+    // Show navbar links on larger screens
+    document.getElementById("navbarLinks").style.display = "block";
+    // Hide the menu icon
+    document.querySelector(".navbar .icon").style.display = "none";
+  }
+});
+</script>
+
+</body>
+</html>
